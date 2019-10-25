@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="allContainer">
+        <h1 class="header">
+            {電子發票開立 CSV 轉檔服務}
+        </h1>
+        <form class="block card mb-3">
+            <div class="form-row">
+                <div class="form-group col-md-6" id="sellTaxNumber">
+                    <label for="inputEmail4">賣方統一編號</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Sell Tax Number">
+                </div>
+                <div class="form-group col-md-6" id="sellName">
+                    <label for="inputPassword4">賣方公司名稱</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Sell Name">
+                </div>
+            </div>
+            <div class="form-group" id="sellAdd">
+                <label for="inputAddress">賣方公司地址</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Sell Add">
+            </div>
+            <div class="form-group" id="sellTel">
+                <label for="inputAddress2">賣方聯絡電話</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Sell Tel">
+            </div>
+        </form>
+
+        <form class="block card mb-3">
+            <div class="form-row">
+                <div class="form-group col-md-6" id="buyTaxNumber">
+                    <label for="inputEmail4">買方統一編號</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Buy Tax Number">
+                </div>
+                <div class="form-group col-md-6" id="buyName">
+                    <label for="inputPassword4">買方公司名稱</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Buy Name">
+                </div>
+            </div>
+            <div class="form-group" id="buyAdd">
+                <label for="inputAddress">買方公司地址</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Buy Add">
+            </div>
+            <div class="form-group" id="buyTel">
+                <label for="inputAddress2">買方聯絡電話</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Tel">
+            </div>
+        </form>
+
+        <form class="block card mb-3">
+            <div class="form-group" id="invoiceNumber">
+                <label for="inputAddress">發票號碼</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Invoice Number">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6" id="invoiceDate">
+                    <label for="inputEmail4">發票開立日期</label>
+                    <input type="date" class="form-control" id="inputEmail4" placeholder="Invoice Date">
+                </div>
+                <div class="form-group col-md-6" id="invoiceTime">
+                    <label for="inputPassword4">發票開立時間</label>
+                    <input type="time" class="form-control" id="inputPassword4" placeholder="Invoice Time">
+                </div>
+            </div>
+
+        </form>
+
+
+        <button type="button" class="btn btn-primary btnAdd">發票品項新增</button>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">代碼</th>
+                    <th scope="col">品名</th>
+                    <th scope="col">數量</th>
+                    <th scope="col">單價(未稅)</th>
+                    <th scope="col">金額</th>
+                    <th width="10%" scope="col">處理</th>
+                </tr>
+            </thead>
+
+            <tbody id="invoiceform">
+                <tr id="firstTr">
+                    <th scope="row">D</th>
+                    <td><input type="text" class="form-control itemName" placeholder="品名" aria-label="Username"
+                            aria-describedby="basic-addon1"></td>
+                    <td><input type="text" class="form-control amount" placeholder="數量" aria-label="Username"
+                            aria-describedby="basic-addon1"></td>
+                    <td><input type="text" class="form-control unitPrice" placeholder="單價(未稅)" aria-label="Username"
+                            aria-describedby="basic-addon1"></td>
+                    <td>
+                        <div id="subtotal"></div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row">課稅別：</th>
+                    <td colspan="5">應稅</td>
+                </tr>
+                <tr>
+                    <th scope="row">銷售額合計(未稅)：</th>
+                    <td colspan="5">
+                        <div id=taxExcluded></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">課稅別：</th>
+                    <td colspan="5">5<span>%</span></td>
+                </tr>
+                <tr>
+                    <th scope="row">總計：</th>
+                    <td colspan="5">
+                        <div id=taxIncluded></div>
+                    </td>
+                </tr>
+
+            </tfoot>
+        </table>
+        <button type="button" class="btn btn-primary btn-lg btn-block">CSV 匯出</button>
+    </div>
+
+
+
+
+    <script src="js/all.js"></script>
+</body>
+
+</html>
