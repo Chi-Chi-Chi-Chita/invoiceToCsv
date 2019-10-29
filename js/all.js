@@ -99,8 +99,8 @@ function invoiceContent() {
 
     /*組字串*/
     var contentString =
-        `H ,${sellTaxNumber.value},${sellName.value},${sellAdd.value},${sellTel.value}
-M,${invoiceNumber.value},${dateAry[0]}/${dateAry[1]}/${dateAry[2]},${invoiceTime.value}:00,7,${buyTaxNumber.value},${buyName.value},${buyAdd.value},1,5,${taxExcluded.textContent},${taxPrice.textContent},${taxIncluded.textContent},1
+        `H,${sellTaxNumber.value},${sellName.value},${sellAdd.value},${sellTel.value}
+M,${invoiceNumber.value},${dateAry[0]}/${dateAry[1]}/${dateAry[2]} ${invoiceTime.value}:00,07,${buyTaxNumber.value},${buyName.value},${buyAdd.value},1,5,${taxExcluded.textContent},${taxPrice.textContent},${taxIncluded.textContent},1
 `
     console.log(contentString);
 
